@@ -1,0 +1,247 @@
+.menus-main {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__ct {
+    box-sizing: border-box;
+    padding: 100px 40px 0 40px;
+    max-width: 1440px;
+    width: 100%;
+    background-color: $first-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__text-ct {
+    box-sizing: border-box;
+    padding-right: 80px;
+    width: 45%;
+  }
+
+  &__title {
+    margin-top: 0;
+    margin-bottom: 30px;
+    width: 100%;
+    font-size: 2.4em;
+    font-family: $serif;
+    color: $second-color;
+  }
+
+  &__text {
+    font-size: .9em;
+    font-family: 'metro-el';
+    color: $text-color;
+    line-height: 2em;
+  }
+
+  &__slider-ct {
+    width: 450px;
+    height: 330px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  &__img-ct {
+    display: flex;
+    margin: 0;
+    width: 1350px;
+    height: 330px;
+    transition: transform .3s;
+
+    img {
+      object-fit: none;
+    }
+  }
+
+  &__slider-btn-ct-ct {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+  }
+
+  &__slider-btn-ct {
+    margin-bottom: 20px;
+    display: flex;
+  }
+
+  &__slider-btn {
+    content: '';
+    margin: 0 15px;
+    width: 7px;
+    height: 7px;
+    border-radius: 50% 50%;
+    border: 2px white solid;
+    cursor: pointer;
+
+    &--active {
+      background: white;
+    }
+  }
+}
+
+.menus-menus {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__ct {
+    box-sizing: border-box;
+    padding: 100px 40px;
+    max-width: 1440px;
+    width: 100%;
+    background-color: $first-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  &__menu-select-ct {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  &__menu-select {
+    margin: 0 20px 60px 20px;
+    font-family: $serif;
+    font-size: 1.6em;
+    color: $second-color;
+    cursor: pointer;
+    transition: color .2s;
+
+    &:hover {
+      color: $text-color;
+    }
+  }
+
+  &__menu-ct {
+    padding: 40px;
+    width: 400px;
+    border: 1px $second-color solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    animation-name: menuappear;
+    animation-duration: .8s;
+
+    &--hidden {
+      opacity: 0;
+      display: none;
+    }
+
+    @keyframes menuappear {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__menu-title {
+    margin: 0;
+    font-family: $serif;
+    font-size: 1.4em;
+    color: $second-color;
+  }
+
+  &__title-separator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+
+    hr {
+      width: 140px;
+      height: 2px;
+      border-top: 1px $second-color solid;
+      border-bottom: 1px $second-color solid;
+      border-left: none;
+      border-right: none;
+    }
+
+    p {
+      margin: 0 3px;
+      font-size: 1.8em;
+      color: $second-color;
+    }
+  }
+
+  &__type {
+    margin: 10px 0;
+    font-family: $serif;
+    font-size: .8em;
+    font-weight: 700;
+    text-decoration: underline;
+  }
+
+  &__dish {
+    margin: 5px 0;
+    font-family: $serif;
+    font-size: .8em;
+  }
+
+  &__separator {
+    margin: 10px 0;
+    font-family: $serif;
+    font-size: .8em;
+    font-style: italic;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .menus-main {
+    &__ct {
+      flex-direction: column;
+    }
+
+    &__text-ct {
+      margin-bottom: 80px;
+      padding-right: 20px;
+      width: auto;
+    }
+
+    &__title,
+    &__text {
+      text-align: center;
+    }
+
+    &__slider-ct {
+      width: 100%;
+    }
+
+    &__slider-btn-ct-ct {
+      display: none;
+    }
+  }
+
+  .menus-menus {
+    &__menu-select-ct {
+      display: none;
+    }
+
+    &__menu-ct {
+      width: auto;
+      border: none;
+      animation: none;
+
+      &--hidden {
+        opacity: 1;
+        display: flex;
+      }
+    }
+  }
+}

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet"> 
+	<title>The Finest - Home</title>
+</head>
+<body>
+  <header class="header" id="header">
+    <p class="header__logo">The Finest</p>
+  </header>
+  <div class="burger" id="burger">
+    <div class="burger__piece burger__piece--top" id="burger-top"></div>
+    <div class="burger__piece burger__piece--middle" id="burger-middle"></div>
+    <div class="burger__piece burger__piece--bottom" id="burger-bottom"></div>
+  </div>
+  <div class="sidebar" id="sidebar">
+    <div class="sidebar__top"></div>
+    <div class="sidebar__body">
+      <nav class="nav">
+        <ul class="nav__list">
+          <li class="nav__item"><a href="index.html">HOME</a></li>
+          <li class="nav__item"><a href="book.html">BOOK A TABLE</a></li>
+          <li class="nav__item"><a href="menus.html">MENUS</a></li>
+          <li class="nav__item"><a href="events.html">EVENTS</a></li>
+          <li class="nav__item"><a href="book.html#contact">CONTACT</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <div class="sidebar__overlay" id="overlay"></div>
+  <div class="book-hero"></div>
+    <section class="book-main" id="book-main">
+      <div class="book-main__ct">
+        <div class="book-main__text-ct">
+          <h1 class="book-main__title">Reservations</h1>
+          <p class="book-main__text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quidem, quae? Enim libero fuga aliquid inventore impedit. Harum, ducimus repellat asperiores inventore quis minus explicabo odio nihil possimus recusandae, quo saepe aspernatur voluptatibus ad quos laborum amet rem hic, sed culpa omnis? Nobis deleniti optio totam libero pariatur beatae harum, cum alias eius ipsa laboriosam quaerat. Corporis nemo dolore excepturi sint?</p>
+          <div class="book-main__info-ct">
+            <div class="book-main__info-text-ct">
+              <p class="book-main__info-text book-main__info-text--address">10 Grove St.<br><span class="book-main__info-text--spacing">Los Angeles, CA 90010</span></p>
+              <p class="book-main__info-text book-main__info-text--tel">555-4567</p>
+              <p class="book-main__info-text book-main__info-text--mail">the-finest@mail.com</p>
+            </div>
+            <div class="book-main__info-hours">
+              <div class="book-main__info-hour-ct">
+                <p class="book-main__info-hour-day">Tue. to Sun. :</p>
+                <p>12:00 - 13-15<br>19:00 - 21:30</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="book-main__form-ct" id="form-book-ct">
+          <form action="" class="form-book" id="form-book">
+            <h3 class="form-book__title">Book your table</h3>
+            <div class="form-book__set">
+              <label for="book-guests" class="form-book__label">Guests :</label>
+              <div class="form-book__input-ct">
+                <input type="text" class="form-book__input form-book__input--guests form-book__input--text" id="book-guests" value= "1" disabled>
+                <div class="form-book__inc" id="book-ginc">+</div>
+                <div class="form-book__dec" id="book-gdec">-</div>
+              </div>
+            </div>
+            <div class="form-book__set">
+              <label for="book-date" class="form-book__label">Date :</label>
+              <input type="date" class="form-book__input" id="book-date">
+            </div>
+              <div class="form-book__set">
+                <label for="book-hour" class="form-book__label">Hour :</label>
+                <select name="hour" id="book-hour" class="form-book__select">
+                  <option value="T12:00:00">12:00</option>
+                  <option value="T12:15:00">12:15</option>
+                  <option value="T12:30:00">12:30</option>
+                  <option value="T12:45:00">12:45</option>
+                  <option value="T13:00:00">13:00</option>
+                  <option value="T13:15:00">13:15</option>
+                  <option value="T19:00:00">19:00</option>
+                  <option value="T19:15:00">19:15</option>
+                  <option value="T19:30:00">19:30</option>
+                  <option value="T19:45:00">19:45</option>
+                  <option value="T20:00:00">20:00</option>
+                  <option value="T20:15:00">20:15</option>
+                  <option value="T20:30:00">20:30</option>
+                  <option value="T20:45:00">20:45</option>
+                  <option value="T20:00:00">21:00</option>
+                  <option value="T21:15:00">21:15</option>
+                  <option value="T21:30:00">21:30</option>
+                </select>
+              </div>
+              <label for="book-name" class="form-book__label">Name :</label>
+              <input type="text" class="form-book__input form-book__input--text" id="book-name" placeholder="Name">
+              <label for="book-phone" class="form-book__label">Phone Number :</label>
+              <input type="text" class="form-book__input form-book__input--text" id="book-phone" placeholder="Phone Number">
+              <div class="form__set">
+                <label for="book-events" class="form-book__label">Event :</label>
+                <select name="events" id="book-events" class="form-book__select">
+                  <option value="None" id="opt-none">None</option>
+                  <option value="event1" id="opt-event1">Event 1</option>
+                  <option value="event2" id="opt-event2">Event 2</option>
+                  <option value="event3" id="opt-event3">Event 3</option>
+                  <option value="event4" id="opt-event4">Event 4</option>
+                </select>
+              </div>
+            <p class="form-book__message form-book__message--confirm" id="form-book-confirm">Réservation effectuée</p>
+            <p class="form-book__message form-book__message--error" id="form-book-error-empty">Empty field(s)</p>
+            <p class="form-book__message form-book__message--error" id="form-book-error-phone">Invalid phone number format</p>
+            <div class="form-contact__submit-ct">
+              <button class="form-book__submit" id="book-submit">Book</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+    <section class="book-contact" id="contact">
+      <div class="book-contact__ct">
+        <hr class="book-contact__separator" />
+        <h1 class="book-contact__title">Contact</h1>
+        <form action="" class="form-contact" id="form-contact">
+          <div class="form-contact__input-ct">
+            <input type="text" class="form-contact__input form-contact__input--left" id="contact-name" placeholder="Name">
+            <input type="text" class="form-contact__input" id="contact-mail" placeholder="Mail">
+          </div>
+          <textarea class="form-contact__textarea" id="contact-message" placeholder="Your message here"></textarea>
+          <p class="form-contact__message form-contact__message--confirm" id="form-contact-confirm">Message send</p>
+          <p class="form-contact__message form-contact__message--error" id="form-contact-error-empty">Empty field(s)</p>
+          <p class="form-contact__message form-contact__message--error" id="form-contact-error-mail">Invalid mail format</p>
+          <div class="form-contact__submit-ct">
+            <button class="form-contact__submit" id="contact-submit">Send</button>
+          </div>
+        </form>
+      </div>
+    </section>
+    <footer class="footer">
+      <p class="footer__text">flo-wd</p>
+    </footer>
+  
+    <script src="js/app.js"></script>
+    <script src="js/book.js"></script>
+  </body>
+</html>

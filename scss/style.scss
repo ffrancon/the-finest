@@ -1,0 +1,389 @@
+//-- VARIABLES --//
+$first-color: #FFFEFA;
+$second-color: #8e793a;
+$third-color: #313a31;
+$bg-color: #F0F0F0;
+$text-color: #252525;
+
+$break-small: 768px;
+$break-large: 1200px;
+
+//-- FONTS --//
+$serif: 'Libre Baskerville', serif;
+
+@font-face {
+  font-family: 'metro-el';
+  src: url('fonts/Metropolis-ExtraLight.otf');
+}
+
+@font-face {
+  font-family: 'metro-l';
+  src: url('fonts/Metropolis-Light.otf');
+}
+
+@font-face {
+  font-family: 'msd';
+  src: url('fonts/MrsSaintDelafield-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'baskerville-r';
+  src: url('fonts/LibreBaskerville-Regular.ttf');
+}
+
+//-- STYLE --//
+h1, h2, h3 {
+  font-weight: normal;
+}
+
+body {
+  margin: 0;
+  background-color: $bg-color;
+  color: $text-color;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+button {
+  width: 160px;
+  height: 40px;
+  font-family: 'metro-l';
+  background-color: $first-color;
+  color: $text-color;
+  border: 1px $text-color solid;
+  font-size: .9em;
+  transition: background .2s ease;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $text-color;
+    color: $first-color;
+  }
+}
+
+//-- Hero --//
+
+@mixin hero {
+  padding-top : 80px;
+  width: 100vw;
+  height: 60vh;
+  background-size: cover;
+  background-position: center;
+}
+
+.home-hero {
+  @include hero;
+  background-image: url('img/home-hero.jpg');
+}
+
+.menus-hero {
+  @include hero;
+  background-image: url('img/menus-hero.jpg');
+}
+
+.events-hero {
+  @include hero;
+  background-image: url('img/events-hero2.jpg');
+  background-position: center 75%;
+}
+
+.book-hero {
+  @include hero;
+  background-image: url('img/book-hero.jpg');
+}
+
+//-- Header --//
+.header {
+  width: 100%;
+  height: 50px;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background .4s;
+
+  &--scrolled {
+    background: #fff;
+    box-shadow: -1px 2px 5px 0px rgba(0,0,0,0.2);
+  }
+  
+  &__logo {
+    margin: 0;
+    padding-top: 13px;
+    font-family: "msd";
+    font-size: 2.4em;
+  }
+}
+
+.burger {
+  width: 30px;
+  height: 20px;
+  margin-top: 13px;
+  position: fixed;
+  top: 0;
+  left: 20px;
+  z-index: 30;
+  cursor: pointer;
+
+  &__piece {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background: $first-color;
+  }
+  
+  &__piece--top{
+    top: 0;
+    transform-origin: bottom left;
+  }
+  
+  &__piece--middle {
+    top: 9px;
+  }
+  
+  &__piece--bottom {
+    bottom: 0;
+    transform-origin: top left;
+  }
+
+  &__piece--scrolled {
+    background: #454545;
+  }
+
+  &__piece--top-enabled {
+    background: $first-color;
+    animation-name: topenabled;
+    animation-duration: .4s;
+    animation-fill-mode: forwards;
+  }
+
+  &__piece--top-disabled {
+    animation-name: topdisabled;
+    animation-duration: .4s;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes topenabled {
+    from {
+      width: 30px;
+      transform: rotate(0);
+    }
+    to {
+      width: 25px;
+      transform: rotate(45deg);
+      background: $first-color;
+    }
+  }
+
+  @keyframes topdisabled {
+    from {
+      width: 25px;
+      transform: rotate(45deg);
+      background: $first-color;
+    }
+    to {
+      width: 30px;
+      transform: rotate(0);
+    }
+  }
+
+  &__piece--middle-enabled {
+    background: $first-color;
+    animation-name: middleenabled;
+    animation-duration: .4s;
+    animation-fill-mode: forwards;
+  }
+
+  &__piece--middle-disabled {
+    animation-name: middledisabled;
+    animation-duration: .4s;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes middleenabled {
+    from {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    to {
+      opacity: 0;
+      transform: translateX(-30px);
+      background: $first-color;
+    }
+  }
+
+  @keyframes middledisabled {
+    from {
+      opacity: 0;
+      transform: translateX(-30px);
+      background: $first-color;
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  &__piece--bottom-enabled {
+    background: $first-color;
+    animation-name: bottomenabled;
+    animation-duration: .4s;
+    animation-fill-mode: forwards;
+  }
+
+  &__piece--bottom-disabled {
+    animation-name: bottomdisabled;
+    animation-duration: .4s;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes bottomenabled {
+    from {
+      width: 30px;
+      transform: rotate(0);
+      background: $first-color;
+    }
+    to {
+      width: 25px;
+      transform: rotate(-45deg);
+    }
+  }
+
+  @keyframes bottomdisabled {
+    from {
+      width: 25px;
+      transform: rotate(-45deg);
+      background: $first-color;
+    }
+    to {
+      width: 30px;
+      transform: rotate(0);
+    }
+  }
+}
+
+//-- Sidebar & Nav --//
+.sidebar {
+  position: fixed;
+  top: 0;
+  width: 300px;
+  height: 100vh;
+  background-color: $third-color;
+  transform: translateX(-100%);
+  transition: transform .4s ease-in-out;
+  z-index: 20;
+
+  &--enabled {
+    transform: translateX(0);
+  }
+
+  &__overlay {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .4);
+    z-index: 15;
+    display: none;
+
+    &--enabled {
+      display: block;
+    }
+  }
+
+  &__top {
+    width: 100%;
+    height: 80px;
+  }
+
+  &__body {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.nav {
+  &__list {
+    list-style: none;
+  }
+
+  &__item {
+    margin: 40px 0;
+    font-family: 'metro-l';
+    font-size: 1em;
+    color: $first-color;
+
+    a {
+      //padding-bottom: 4px;
+      position: relative;
+    }
+
+    a:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 100%;
+      bottom: -4px;
+      height: 2px;
+      background: $first-color;
+      transition-property: left, right;
+      transition-duration: 0.2s;
+      transition-timing-function: ease-out;
+    }
+  
+    a:hover:after {
+      right: 0;
+    }
+  }
+}
+
+.footer {
+  width: 100%;
+  height: 40px;
+  background-color: $third-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  &__text {
+    margin: 0;
+    color: $first-color;
+    font-family: 'metro-l';
+    font-size: 1em;
+  }
+}
+
+@media screen and (max-width: 768px) {
+
+  button {
+    width: 240px;
+    height: 60px;
+    background-color: $first-color;
+    color: #707070;
+    border: 1px #707070 solid;
+    font-size: 1em;
+    transition: background .2s ease;
+  }
+
+  .header {
+    &__ct {
+      justify-content: space-between;
+    }
+  }
+
+  .sidebar {
+    width: 70%;
+  }
+}
+
+//-- IMPORTS --//
+@import './home.scss', './menus.scss', './events.scss', './book.scss';
